@@ -1,7 +1,6 @@
-// const mongoose = require('mongoose');
-// const Schema = mongoose.Schema;
-
-const {schema, model} = require('mongoose')
+//const mongoose = require('mongoose');
+//const Schema = mongoose.Schema;
+const { Schema, model } = require("mongoose");
 
 const recipeSchema = new Schema({
   title: {
@@ -23,8 +22,8 @@ const recipeSchema = new Schema({
     enum: ["breakfast", "main_course", "soup", "snack", "drink", "dessert"],
   },
   image: {
-    String,
-    default: "https://images.media-allrecipes.com/images/75131.jpg",
+    type: String,
+    default: "/images.media-allrecipes.com/images/75131.jpg",
   },
   duration: {
     type: Number,
@@ -37,6 +36,6 @@ const recipeSchema = new Schema({
   },
 });
 
-const Recipe = mongoose.model('Recipe', recipeSchema);
+const Recipe = model("Recipe", recipeSchema);
 
 module.exports = Recipe;
